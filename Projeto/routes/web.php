@@ -1,3 +1,5 @@
+
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/admin/produtos', ['as'=>'admin.produtos', 'uses'=>'Admin\ProdutoController@index']);
+Route::get('/admin/produto/adicionar',['as'=>'admin.produto.adicionar','uses'=>'Admin\ProdutoController@adicionar']);
