@@ -30,6 +30,13 @@ class ProdutoController extends Controller
 
     public function atualizar(Request $req, $id){
       $dados = $req->all();
+      if(isset($dados['quantidade'])){
+        $dados['quantidade'] = '1';
+      }
+      else {
+        $dados['quantidade'] = '0';
+      }
+
       Produto::find($id)->update($dados);
 
       return redirect()->route('admin.produtos');
@@ -44,6 +51,8 @@ class ProdutoController extends Controller
       $estoque = Produto::all();
       return view('admin.produtos.index', compact('estoque'));
     }
-
-
+    public function gerenciar(Request $req){
+      var_dump($_POST['listaProdutos']);
+      var_dump($_POST['quantidade']);
+    }
 }

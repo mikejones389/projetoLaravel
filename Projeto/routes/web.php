@@ -26,3 +26,4 @@ Route::get('/admin/produtos/editar/{id}',['as'=>'admin.produtos.editar','uses'=>
 Route::put('/admin/produtos/atualizar/{id}',['as'=>'admin.produtos.atualizar', 'uses'=>'App\Http\Controllers\Admin\ProdutoController@atualizar']);
 Route::get('/admin/produtos/deletar/{id}',['as'=>'admin.produtos.deletar', 'uses'=>'App\Http\Controllers\Admin\ProdutoController@deletar']);
 Route::get('/admin/produtos/estoque',['as'=>'admin.produtos.estoque','uses'=>'App\Http\Controllers\Admin\ProdutoController@gerenciarEstoque']);
+Route::post('/admin/produtos/gerenciar',['as'=>'admin.produtos.gerenciar','uses'=>'App\Http\Controllers\Admin\ProdutoController@gerenciar']);

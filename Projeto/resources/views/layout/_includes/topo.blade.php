@@ -22,7 +22,9 @@
             <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li><a href="{{ route('admin.produtos') }}">Menu</a></li>
-              <li><a href="{{ route('admin.produtos.estoque') }}">Estoque</a></li>
+              @if(isset($produtos))
+                <li><a href="{{ route('admin.produtos.estoque', $produto) }}">Estoque</a></li>
+              @endif
               <li><a href="{{ route('admin.produtos.adicionar') }}">Adicionar</a></li>
             </ul>
             <ul class="sidenav" id="mobile">
